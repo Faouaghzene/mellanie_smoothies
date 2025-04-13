@@ -40,7 +40,7 @@ if ingredients_list :
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
 
-st.write(smoothiefroot_response.json() ,use_container_width=True)
+st.write(smoothiefroot_response,use_container_width=True)
 
 
 
