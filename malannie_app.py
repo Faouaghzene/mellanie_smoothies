@@ -2,7 +2,7 @@
 import streamlit as st
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+
 from snowflake.snowpark.functions import col 
 # Write directly to the app
 st.title(":cup_with_straw: Example Streamlit App :cup_with_straw:")
@@ -17,3 +17,4 @@ cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select (col('FRUIT_NAME'))
 st.dataframe(data=my_dataframe, use_container_width=True)
+st.text(smoothiefroot_response)
